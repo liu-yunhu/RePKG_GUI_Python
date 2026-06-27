@@ -123,4 +123,14 @@ RePKG 原项目同样使用 MIT License，详见 [RePKG LICENSE](https://github.
 
 ## 免责声明
 
-本项目仅为 RePKG 命令行工具的图形界面包装，不包含 RePKG 的核心代码。使用本工具解包的内容请遵守相关法律法规和 Steam 服务条款。
+1. **项目性质**：本项目是 [RePKG](https://github.com/notscuffed/RePKG) 命令行工具的图形界面包装器（GUI Wrapper），仅提供更友好的操作界面，不包含 RePKG 的核心解包逻辑代码。
+
+2. **版权归属**：RePKG 核心功能的所有权归原作者 [NotScuffed](https://github.com/notscuffed) 所有，本项目遵循原项目的 MIT License 进行分发。
+
+3. **使用责任**：使用本工具解包的内容应仅限于个人学习、研究或备份已购买的 Wallpaper Engine 壁纸。用户应自行承担使用本工具所产生的一切法律责任。
+
+4. **第三方内容**：通过本工具解包的壁纸内容版权归原作者所有，未经授权不得用于商业用途或重新分发。
+
+5. **商标声明**：Steam 和 Wallpaper Engine 是 Valve Corporation 的注册商标。本项目与 Valve Corporation 无任何关联。
+
+6. **免责声明**：本软件按"原样"提供，不作任何明示或暗示的保证。作者不对因使用本软件而导致的任何直接或间接损失承担责任。
