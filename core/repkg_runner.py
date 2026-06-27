@@ -22,8 +22,14 @@ class RePKGRunner:
             repkg_path: RePKG.exe 的路径，默认为程序目录下的 RePKG.exe
         """
         if repkg_path is None:
-            # 默认使用程序目录下的 RePKG.exe
-            app_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            # 获取程序所在目录 (兼容 PyInstaller 打包和直接运行)
+            if getattr(sys, 'frozen', False):
+                # PyInstaller 打包后，exe 所在目录
+                app_dir = os.path.dirname(sys.executable)
+            else:
+                # 直接运行 Python 脚本，脚本所在目录
+                app_dir = os.path.dirname(os.path.abspath(__file__))
+                app_dir = os.path.dirname(app_dir)  # 上一级目录
             repkg_path = os.path.join(app_dir, 'RePKG.exe')
         
         self.repkg_path = os.path.abspath(repkg_path)
