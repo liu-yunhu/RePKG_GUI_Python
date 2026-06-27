@@ -53,8 +53,8 @@
 
 1. 克隆仓库：
 ```bash
-git clone https://github.com/your-username/RePKG-GUI-Python.git
-cd RePKG-GUI-Python
+git clone https://github.com/liu-yunhu/RePKG_GUI_Python.git
+cd RePKG_GUI_Python
 ```
 
 2. 安装拖放支持 (可选)：
