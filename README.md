@@ -45,8 +45,11 @@
 - Python 3.6 或更高版本
 - Windows 操作系统 (已测试)
 - tkinterdnd2 (可选，用于拖放功能)
+- PyInstaller (可选，用于打包为 EXE)
 
 ## 安装
+
+### 方式一：直接运行源码
 
 1. 克隆仓库：
 ```bash
@@ -61,13 +64,28 @@ pip install tkinterdnd2
 
 3. 确保 `RePKG.exe` 文件在程序目录下 (可从 [RePKG Releases](https://github.com/notscuffed/RePKG/releases) 下载)
 
-## 使用方法
-
-1. 运行程序：
+4. 运行程序：
 ```bash
 python repkg_gui.py
 ```
 
+### 方式二：打包为 EXE (可选)
+
+1. 安装 PyInstaller：
+```bash
+pip install pyinstaller
+```
+
+2. 打包：
+```bash
+python -m PyInstaller --onefile --windowed --name "RePKG-GUI" repkg_gui.py
+```
+
+3. 输出的 EXE 在 `dist/` 目录下，需与 `RePKG.exe` 放在同一目录
+
+## 使用方法
+
+1. 运行程序（源码或 EXE）
 2. 拖放 PKG/TEX 文件到输入框，或点击"浏览"选择文件
 3. 确认输出目录 (默认为输入文件所在目录的 `output` 文件夹)
 4. 配置选项后点击"开始解包"
@@ -88,15 +106,16 @@ python repkg_gui.py
 
 ```
 RePKG-GUI-Python/
-├── repkg_gui.py          # 主程序入口
+├── repkg_gui.py              # 主程序入口
+├── RePKG-GUI.spec            # PyInstaller 打包配置
 ├── gui/
 │   ├── __init__.py
-│   ├── main_window.py    # 主窗口
-│   ├── extract_tab.py    # 解包标签页 (支持拖放)
-│   └── info_tab.py       # 信息查看标签页 (支持拖放)
+│   ├── main_window.py        # 主窗口
+│   ├── extract_tab.py        # 解包标签页 (支持拖放)
+│   └── info_tab.py           # 信息查看标签页 (支持拖放)
 ├── core/
 │   ├── __init__.py
-│   └── repkg_runner.py   # RePKG CLI 封装
+│   └── repkg_runner.py       # RePKG CLI 封装
 └── README.md
 ```
 
@@ -134,3 +153,5 @@ RePKG 原项目同样使用 MIT License，详见 [RePKG LICENSE](https://github.
 5. **商标声明**：Steam 和 Wallpaper Engine 是 Valve Corporation 的注册商标。本项目与 Valve Corporation 无任何关联。
 
 6. **免责声明**：本软件按"原样"提供，不作任何明示或暗示的保证。作者不对因使用本软件而导致的任何直接或间接损失承担责任。
+
+7. **AI 辅助开发**：本项目的部分代码由 AI 编程助手辅助生成，经人工审核和测试后发布。
